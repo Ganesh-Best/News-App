@@ -96,7 +96,7 @@ const  fetchApi = (url,insertRow,insertCollapse) =>{
  //assigning an anonymous function to onprogress event :
  //so when onprogress event triggers :given function will run automatically :  
   xhr.onprogress = () =>{
-    let text  = `<h1 class="display-4 text-center mx-auto">Wait a Minute: Data is loading :)</h1> `
+    let text  = `<h1 class="display-4 text-center mx-auto">Wait a Minute: News are loading :)</h1> `
     document.querySelector('#row').innerHTML = text; 
     document.querySelector('#collapse').innerHTML = text;
   }
@@ -159,15 +159,15 @@ let card = (title,url,imgUrl) =>{
 let collapse = (id,title,content,url) =>{
  
     return `
-    <div id="accordion">
+    <div id="accordion col-sm-12">
     <div class="card">
       <div class="card-header" id="headingOne">
-        <h5 class="mb-0">
-          <button class="btn btn-link badge badge-danger" data-toggle="collapse" data-target='#${id}' aria-expanded="true" aria-controls="collapseOne">
+        <h6 class="mb-0" style="font-size:3vh;" >
+          <button class="btn-link badge-danger" data-toggle="collapse" data-target='#${id}' aria-expanded="true" aria-controls="collapseOne">
              ${title}
           </button>
-        </h5>
-      </div>
+        </h6>
+     </div>
   
       <div id= '${id}' class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
