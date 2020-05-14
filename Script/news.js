@@ -1,9 +1,34 @@
 //Your API key is: 89970aa6f414475ab22c9f8855874290
 //It is Api Key :Please Visit https://newsapi.org for Your Api key :  
-const key = "89970aa6f414475ab22c9f8855874290"
+const key = "89970aa6f414475ab22c9f8855874290" ;
 
-//Creating Url :
-let url = `http://newsapi.org/v2/top-headlines?country=in&apiKey=${key}`;
+// Url :Where we are fetching data :
+let server = `http://newsapi.org/v2/top-headlines?country=in&apiKey=${key}`;
+
+//It is function which return link:Where we fetch data/news :
+//Passing 2 argument:
+//1st one :catagory Of news:
+//2nd one :Api Key :
+const url = (catagory,key) =>{
+  return `http://newsapi.org/v2/top-headlines?country=in&catagory=${catagory}&apiKey=${key}` ;
+}
+
+//Selecting  element having id value = dropdown  & store to drop variable : 
+ const drop  = document.querySelector('#dropdown');
+
+ ////assign particular anonymous function on change event at drop Object :
+ drop.addEventListener('change',(eventObject)=>{
+
+   //Accessing value of target element/Object & store to catagory variable :
+   let catagory =  eventObject.target.value;
+
+   //calling url function and passing catagory and key :
+   const link =  url(catagory,key);
+   
+   //Calling fetch Api :
+   fetchApi(link, insertRow, insertCollapse);
+
+ });
 
 //Accessing and storing search Object (element having id value :search) into search variable :
 const search = document.querySelector('#search');
@@ -124,7 +149,7 @@ const fetchApi = (url, insertRow, insertCollapse) => {
   //3rd : either true or false :
   //true for asynchronous operations:
   //false for synchronous operations,now we donot use it :  
-  xhr.open("GET", url, true);
+  xhr.open("GET", server, true);
 
   //calling send function: Responsible for sending request to given url :
   xhr.send();
