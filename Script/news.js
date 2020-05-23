@@ -3,7 +3,7 @@
 const key = "89970aa6f414475ab22c9f8855874290" ;
 
 // Url :Where we are fetching data :
-let server = `http://newsapi.org/v2/top-headlines?country=in&apiKey=${key}`;
+let server = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${key}`;
 
 //It is function which return link:Where we fetch data/news :
 //Passing 2 argument:
