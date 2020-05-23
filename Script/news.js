@@ -10,7 +10,7 @@ let server = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${key}`;
 //1st one :catagory Of news:
 //2nd one :Api Key :
 const url = (catagory,key) =>{
-  return `http://newsapi.org/v2/top-headlines?country=in&catagory=${catagory}&apiKey=${key}` ;
+  return `https://newsapi.org/v2/top-headlines?country=in&catagory=${catagory}&apiKey=${key}` ;
 }
 
 //Selecting  element having id value = dropdown  & store to drop variable : 
