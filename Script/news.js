@@ -150,7 +150,7 @@ const fetchApi = (url, insertRow, insertCollapse) => {
   //true for asynchronous operations:
   //false for synchronous operations,now we donot use it :  
   xhr.open("GET", server, true);
-  xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+
   //calling send function: Responsible for sending request to given url :
   xhr.send();
 
